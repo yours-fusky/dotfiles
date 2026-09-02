@@ -1,0 +1,9 @@
+theme = TokyoNight Night 
+font-size = 14
+background-opacity = 0.95
+background-blur = 20
+mouse-hide-while-typing = true
+window-decoration = true
+macos-option-as-alt = true
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+quick-terminal-position = bottom
