@@ -25,3 +25,9 @@ vim.api.nvim_create_autocmd({ "DirChanged", "UIEnter", "VimEnter", "FocusGained"
     -- end, 50)
   end,
 })
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+  pattern = { "*" },
+  command = "silent! w",
+  nested = true,
+})
