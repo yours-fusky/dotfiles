@@ -7,3 +7,6 @@ window-decoration = true
 macos-option-as-alt = true
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 quick-terminal-position = bottom
+
+keybind = cmd+shift+r=prompt_tab_title
+shell-integration-features = no-title
