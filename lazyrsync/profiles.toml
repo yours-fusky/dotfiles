@@ -1,0 +1,48 @@
+[[profile]]
+name = "Home-server"
+description = ""
+created = 1789202914
+
+[[profile.task]]
+id = "downloads-bdf8"
+label = "downloads-bdf8"
+action = "snapshot"
+source = "$HOME/Downloads"
+dest = "fusky@192.168.0.119:/mnt/hdd/Downloads"
+created = 1789203006
+
+[profile.task.flags]
+archive = true
+compress = true
+verbose = true
+human = true
+progress = true
+delete = false
+delete_excluded = false
+backup = false
+update = false
+checksum = false
+partial = true
+size_only = false
+existing = false
+ignore_existing = false
+bwlimit_kbps = 0
+hardlinks = false
+acls = false
+xattrs = false
+
+[profile.task.filters]
+excludes = []
+includes = []
+exclude_from = ""
+include_from = ""
+files_from = ""
+filter = []
+
+[profile.task.ssh]
+port = 22
+keyfile = ""
+extra = ""
+
+[profile.task.advanced]
+raw_args = ""
