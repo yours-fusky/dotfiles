@@ -14,47 +14,47 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
-local vue_ts_plugin_location = vue_ls_path .. "/node_modules/@vue/language-server"
-vim.lsp.config["ts_ls"] = {
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vue_ts_plugin_location,
-        languages = { "javascript", "typescript", "vue" },
-      },
-    },
-  },
-  filetypes = {
-    "javascript",
-    "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-    "vue",
-  },
-  root_markers = { "package.json" },
-  single_file_support = true,
-}
-
-vim.lsp.config["emmet_language_server"] = {
-  filetypes = {
-    "astro",
-    "css",
-    "eruby",
-    "html",
-    "htmlangular",
-    "htmldjango",
-    "javascriptreact",
-    "less",
-    "sass",
-    "scss",
-    "svelte",
-    "typescriptreact",
-  },
-}
+-- local vue_ls_path = vim.fn.expand("$mason/packages/vue-language-server")
+-- local vue_ts_plugin_location = vue_ls_path .. "/node_modules/@vue/language-server"
+-- vim.lsp.config["ts_ls"] = {
+--   init_options = {
+--     plugins = {
+--       {
+--         name = "@vue/typescript-plugin",
+--         location = vue_ts_plugin_location,
+--         languages = { "javascript", "typescript", "vue" },
+--       },
+--     },
+--   },
+--   filetypes = {
+--     "javascript",
+--     "javascriptreact",
+--     "javascript.jsx",
+--     "typescript",
+--     "typescriptreact",
+--     "typescript.tsx",
+--     "vue",
+--   },
+--   root_markers = { "package.json" },
+--   single_file_support = true,
+-- }
+--
+-- vim.lsp.config["emmet_language_server"] = {
+--   filetypes = {
+--     "astro",
+--     "css",
+--     "eruby",
+--     "html",
+--     "htmlangular",
+--     "htmldjango",
+--     "javascriptreact",
+--     "less",
+--     "sass",
+--     "scss",
+--     "svelte",
+--     "typescriptreact",
+--   },
+-- }
 
 -- local project_root = vim.fn.getcwd()
 -- local vuels_location = project_root .. "/node_modules/@vue/language-server/bin/vue-language-server.js"
@@ -74,6 +74,13 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- import typescript and vue
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.vue" },
+
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+
     -- import/override with your plugins
     { import = "plugins" },
   },
